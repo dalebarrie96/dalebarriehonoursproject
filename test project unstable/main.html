@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Dale Barrie Honours
+</title>
+<!--<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="public/slate/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="public/css/custom.css">
+</head>
+<body>
+<script src='/socket.io/socket.io.js'></script>
+<script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dale Barrie Honours</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+		<li><a href="#"><input type="text" class="form-control" placeholder="username" id='usernametxt'></a></li>
+		<li><a href="#"><button class="btn btn-default" id='chooseName'>Submit</button></a></li>
+        <li class="navbar-brand" id='usernameLbl'></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="alerts">
+</div>
+	
+	<div class="row" id = 'createbutton'>
+	  <div class='col-md-1'></div>
+	  <div class="col-md-5">
+			<button type="button" class="btn btn-default" id ='createBTN'>Join room</button>
+	  </div>
+	  <div class="col-md-6">
+	  	<div id = "noofclients"></div>
+		<div id = "textBody"></div>
+	  </div>
+	</div>
+	<div id = "contentBody">
+		<video id = "localVideo" width = 50% height = 300px autoplay></video>
+		<video id = "remoteVideo" controls autoplay></video>
+	</div>
+	<!--<div id = 'controls'>
+	<label>Users ID:</label><br/>
+    <textarea id="otherId"></textarea><br/>
+	<button >Call</button>
+	</div>-->
+	
+	<div class="row" id = 'callsection'>
+	  <div class="col-md-4">
+	  	<!--<div class="input-group">
+		  <span class="input-group-addon" id="sizing-addon2">Username</span>
+		  <input type="text" class="form-control" id="otherId" aria-describedby="sizing-addon2">
+		</div>-->
+		<div class="form-group">
+		  <label class="control-label">Connect to a friend:</label>
+		  <div class="input-group">
+			<span class="input-group-addon">Username</span>
+			<input type="text" class="form-control"id='otherId'>
+			<span class="input-group-btn">
+			  <button class="btn btn-default" type="button" id='call'>Call</button>
+			</span>
+		  </div>
+	  </div>
+	  <div class="col-md-8"></div>
+	</div>
+
+	
+<script src='client.js'></script> 
+<script> 
+document.getElementById("call").style.visibility = "hidden";
+</script>
+</body>
+</html>
